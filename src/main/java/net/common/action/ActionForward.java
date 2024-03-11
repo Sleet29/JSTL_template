@@ -28,5 +28,8 @@ public class ActionForward {
 	}
 	
 	//property path의 set 메소드
-	public 
+	public void setPath(String string) {
+		path=string;
+		
+	}
 }
