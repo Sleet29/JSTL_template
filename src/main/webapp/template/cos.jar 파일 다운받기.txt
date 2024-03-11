@@ -1,0 +1,15 @@
+1.  http://www.servlets.com 접속 
+    -> 왼쪽 메뉴의 COS File Upload Library 선택    
+    -> Download 항목의 파일 선택 다운로드 (cos-22.05.zip)
+
+2. 특정 폴더에 압축을 푼 뒤 cos.jar 파일과  
+   C:\Program Files\Apache Software Foundation\Tomcat 10.1\lib\jakartaee-migration-1.0.8-shaded.jar를 같은 폴더에 넣습니다.
+   
+3. E:\두개의파일이있는폴더>java -jar jakartaee-migration-1.0.8-shaded.jar cos.jar cos_2.jar
+   <<교재 238페이지 참고>>   
+   
+   
+4. webapp/WEB-INF/lib에 cos_2.jar 넣기
+    
+    
+5. webapp 폴더 아래 upload 폴더 생성 하세요~   
