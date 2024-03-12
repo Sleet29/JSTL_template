@@ -1,6 +1,6 @@
 <Context> 
   <Resource 
-   name="jdbc/OracleDB" 
+   name="jdbc/Oracledb" 
    auth="Container"
    type="javax.sql.DataSource" 
    username="scott" 

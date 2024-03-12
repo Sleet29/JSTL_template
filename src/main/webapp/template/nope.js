@@ -1,4 +1,30 @@
 $(document).ready(function() {
+   let idcheck_value = '';
+      
+    // ID중복검사 부분
+    $("#idcheck").click(function () {
+		
+		const id = $("#id");
+		// $.trim(문자열)는 문자열의 앞, 뒤 공백을 제거합니다.
+		const id_value = $.trim(id.val());
+		if(id_value == "") {
+			alert("ID를 입력 하세요");
+			id.focus();
+			return false;
+		} else {
+			// 첫글자는 대문자이고 두번째부터는 대소문자, 숫자, _로 총 4개 이상
+			const pattern = /^[A-Z][a-zA-Z_0-9]{3,19}$/;
+			if (pattern.test(id_value)) {
+				const ref = "idcheck.net?id=" + id_value;
+				window.open(ref, "idcheck", "width=350, height=200");
+			} else {
+				alert("첫글자는 대문자이고 두번째부터는 대소문자, 숫자, _로 총 4개 이상이어야 합니다.");
+				id.val('').focus();
+			}
+		}
+	}); // $("#idcheck").click
+
+    
     $('#myform').submit(function() {
         const id = $("#id");
         if ($.trim(id.val()) == "") {
@@ -95,30 +121,6 @@ $(document).ready(function() {
         
     });	// submit() end
     
-    
-    // ID중복검사 부분
-    $("#myform > fieldset > div:nth-child(3) > input[type=button]:nth-child(2)")
-    .click(function () {
-		
-		const id = $("#id");
-		// $.trim(문자열)는 문자열의 앞, 뒤 공백을 제거합니다.
-		const id_value = $.trim(id.val());
-		if(id_value == "") {
-			alert("ID를 입력 하세요");
-			id.focus();
-			return false;
-		} else {
-			// 첫글자는 대문자이고 두번째부터는 대소문자, 숫자, _로 총 4개 이상
-			const pattern = /^[A-Z][a-zA-Z_0-9]{3,}$/;
-			if (pattern.test(id_value)) {
-				const ref = `idcheck.html?id=${id_value}`;
-				window.open(ref, "idcheck", "width=350, height=200");
-			} else {
-				alert("첫글자는 대문자이고 두번째부터는 대소문자, 숫자, _로 총 4개 이상이어야 합니다.");
-				id.val('').focus();
-			}
-		}
-	}); // $("#idcheck").click
 	
 
 	

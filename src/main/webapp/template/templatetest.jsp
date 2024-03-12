@@ -19,33 +19,39 @@
  		line-height:3rem;
  }
  </style>
+ 
+ <script>
+ 	
+ 
+ 	   let result='${message}';
+ 		if(result != ''){
+ 			alert(result);
+ 			<%session.removeAttribute("message"); %>
+ 		}
+ 		
+ 		
+	 </script> 
  </head>
- <%
- 	String pagefile = request.getParameter("page");
- 	if (pagefile == null) {
- 		pagefile = "newitem";
- 	}
- %>
  
  <body>
  	<header>
- 		<div class="jumbotron text-center" style="margin-top: 10px">
+ 		<div class="jumbotron text-center" style="margin-bottom: 0">
  			<h1>상품목록</h1>
  		</div>
  	</header>
 	<nav>
 		<jsp:include page="top.jsp" /> <br><br>
 	</nav> 	
-	<div class="container" style="margin-top: 10px">
+	<div class="container-fluid" style="margin-top: 10px">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-2">
 				<aside>
 					<jsp:include page="left.jsp" />
 				</aside>
 			</div>
-			<div class="col-sm-8" style="margin-bottom:5rem">
+			<div class="col-sm-10" style="margin-bottom:5rem">
 				<section>
-					<jsp:include page = '<%=pagefile + ".jsp" %>' />
+					<jsp:include page = '${pagefile}.jsp' />
 				</section>	
 			</div>
 		</div>
@@ -56,7 +62,7 @@
 	</footer>
 	
 	<script>
-		const pagefile='<%=pagefile%>';	
+		const pagefile='${pagefile}';	
 		const filelist= ["newitem", "bestitem", "useditem"];
 		
 		for(let index=0;index<filelist.length;index++) {

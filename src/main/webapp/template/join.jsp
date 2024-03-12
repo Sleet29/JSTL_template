@@ -4,29 +4,37 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="NewFile.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/css/join.css" rel="stylesheet" type="text/css">
+<style>
+#opener_message {
+	margin-top:-10px;
+	margin-bottom:10px;
+}
+</style>
+<script src="${pageContext.request.contextPath}/js/jquery-3.7.1.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src='validate3.js'></script>
-    
+<script src="${pageContext.request.contextPath}/js/validate.js"></script>
 </head>
+
 <body>
 <div class="container">
-    <form name="myform" method="post" action="send"
-     id="myform">
+    <form name="myform" method="post" action="joinProcess.net" id="myform">
+       <div class="container"></div>
         <fieldset>
-            <legend>유효성 검사</legend>
+            <legend>회원 가입</legend>
             <label for="id">ID</label>
             <div>
-                <input type="text" placeholder="Enter id" name="id" id="id">
-                <input type="button" value="ID중복검사" id="idCheckButton">
+                <input type="text" placeholder="Enter id" name="id" id="id" maxLength="20">
+                <input type="button" value="ID중복검사" id="idcheck">
+                <div id="opener_message"></div><input type="hidden" id="result">
             </div>
 
             <label for="pass">Password</label>
-            <input type="password" placeholder="Enter Password" name="pass" id="pass">
+            <input type="password" placeholder="Enter Password" name="pass" id="pass" maxLength="20">
 
             <label for="jumin1">주민번호</label>
-            <input type="text" placeholder="주민번호 앞자리" maxLength="6" name="jumin1" id="jumin1">
+            <input type="text" placeholder="주민번호 앞자리" maxLength="6" 
+                   name="jumin1" id="jumin1">
             <b> - </b>
             <input type="text" placeholder="주민번호 뒷자리" maxLength="7" name="jumin2" id="jumin2">
 
