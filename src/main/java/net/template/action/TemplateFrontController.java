@@ -65,7 +65,24 @@ public class TemplateFrontController extends jakarta.servlet.http.HttpServlet {
 		case "/loginProcess.net" :
 			action= new LoginProcessAction();
 			break;
+		case "/list.net" :
+			action= new ListAction();
+			break;
+		case "/update.net" :
+			action= new UpdateAction();
+			break;
 			
+		case "/updateProcess.net" :
+			action= new UpdateProcessAction();
+			break;
+			
+		case "/info.net" :
+			action= new InfoAction();
+			break;
+			
+		case "/delete.net" :
+			action= new DeleteAction();
+			break;
 		} // switch (command)
 		
 		forward = action.execute(request, response);

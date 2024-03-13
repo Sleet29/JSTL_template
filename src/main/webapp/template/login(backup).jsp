@@ -64,18 +64,17 @@ $(function(){
 <body>
 
  <div class="container">
-	<form action="loginProcess.net" method="post" class="border-light p-5" >
+	<form action="login_ok.jsp" method="post" class="border-light p-5" >
 	 <p class="h4 mb-4 text-center">login</p>
 	 <div class="form-group">
        <label for="id">id</label>
-       <input type="text" class="form-control"  id="id" placeholder="Enter id"  
-              name="id" required>
+       <input type="text" class="form-control"  id="id" placeholder="Enter id"  name="id">
        	<%-- 아이디 쿠키가 존재시 해당 값을 아이디 필드에 설정 --%>
     </div>
 	<div class="form-group">
        <label for="pass">Password</label>
        <input type="password" class="form-control" id="pass" 
-              placeholder="Enter password" name="passwd" required>
+              placeholder="Enter password" name="passwd">
     </div>
 	
 	<div class="form-group custom-control custom-checkbox">

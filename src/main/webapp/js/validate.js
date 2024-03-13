@@ -16,6 +16,7 @@ $(document).ready(function() {
 			const pattern = /^[A-Z][a-zA-Z_0-9]{3,19}$/;
 			if (pattern.test(id_value)) {
 				const ref = `idcheck.net?id=${id_value}`;
+				idcheck_value = id_value;
 				window.open(ref, "idcheck", "width=350, height=200");
 			} else {
 				alert("첫글자는 대문자이고 두번째부터는 대소문자, 숫자, _로 총 4개 이상이어야 합니다.");
