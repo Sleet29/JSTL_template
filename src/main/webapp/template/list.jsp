@@ -81,6 +81,5 @@ table, h4 {
             	<%session.removeAttribute("message"); %>
             }
             </script>	
-            	
-            					
-            					
+</body>
+</html> 					

@@ -280,10 +280,8 @@ public class DAO {
 	        // PreparedStatement 객체 얻기
 	        pstmt = conn.prepareStatement(delete_sql);
 	        pstmt.setString(1, id);
-	        
 	        int rowsAffected = pstmt.executeUpdate();
 	        
-	        // If rowsAffected is greater than 0, deletion was successful
 	        deleted = rowsAffected > 0;
 	    } catch (Exception se) {
 	        se.printStackTrace();

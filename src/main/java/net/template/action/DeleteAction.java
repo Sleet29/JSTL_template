@@ -16,7 +16,6 @@ public class DeleteAction implements Action {
             throws ServletException, IOException {
         String id = request.getParameter("id");
         DAO dao = new DAO();
-
         boolean deleted = dao.deleteUser(id);
 
         if (deleted) {
@@ -26,8 +25,8 @@ public class DeleteAction implements Action {
         }
 
         ActionForward forward = new ActionForward();
-        forward.setRedirect(false);
-        forward.setPath("/template/deleteResult.jsp");
+        forward.setRedirect(true);
+        forward.setPath("list.net");
         return forward;
     }
 
